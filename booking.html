@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="booking.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+</head>
+<body>
+    <script src="booking.js"></script>
+    <form action="form.php" method="post">
+        <div class="elem-group">
+          <label for="name">Name of the Club</label>
+          <input type="text" id="name" name="visitor_name" placeholder="" pattern=[A-Z\sa-z]{3,20} required>
+        </div>
+        <div class="elem-group">
+          <label for="email">Events Name</label>
+          <input type="text" id="events_name" name="events_name" placeholder="" required>
+        </div>
+        <div class="elem-group">
+          <label for="phone">Contact Info</label>
+          <input type="tel" id="visitor_phone" name="visitor_phone" placeholder="498-348-3872" pattern=(\d{3})-?\s?(\d{3})-?\s?(\d{4}) required>
+        </div>
+        <hr>
+        <div class="elem-group inlined">
+          <label for="adult">No of organizers</label>
+          <input type="number" id="total_adults" name="total_adults" placeholder="2" min="1" required>
+        </div>
+        <div class="elem-group inlined">
+          <label for="child">Max no of participants</label>
+          <input type="number" id="total_children" name="total_children" placeholder="2" min="0" required>
+        </div>
+        <div class="elem-group inlined">
+          <label for="checkin-date">Start Date</label>
+          <input type="date" id="checkin" name="checkin" required>
+        </div>
+        <div class="elem-group inlined">
+          <label for="checkout-date">End Date</label>
+          <input type="date" id="checkout" name="checkout" required>
+        </div>
+        <div class="elem-group">
+          <label for="room-selection">Event Venue</label>
+          <select id="room-selection" name="room_selection" required>
+              <option value="Netaji-Auditorium">Netaji-Auditorium</option>
+              <option value="MG Auditorium">MG Auditorium</option>
+              <option value="VOC-Auditorium-4">VOC-Auditorium-4</option>
+              <option value="VOC-Auditorium-2">VOC-Auditorium-2</option>
+          </select>
+        </div>
+        <hr>
+        <div class="elem-group">
+          <label for="message">Any special requirement?</label>
+          <textarea id="message" name="message" placeholder="Any service or item required for the event." required></textarea>
+        </div>
+        <a href="thanks.html">Submit</a>
+      </form>
+</body>
+</html>

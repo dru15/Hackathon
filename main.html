@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+ul {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+ul li {display: inline-block;}
+ul li:hover {background: #000000;}
+ul li:hover ul {display: block;}
+ul li ul {
+  position: absolute;
+  width: 200px;
+  display: none;
+}
+ul li ul li { 
+  background: #000000; 
+  display: block; 
+}
+ul li ul li a {display:block !important;} 
+ul li ul li:hover {background: #666;}
+
+
+
+.glow {
+  font-size: 80px;
+  color: #f2f2f2; /* Text color */
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 
+      0 0 5px rgba(242, 242, 242, 0.7), 
+      0 0 10px rgba(242, 242, 242, 0.6), 
+      0 0 15px rgba(255, 255, 255, 0.5), 
+      0 0 20px rgba(255, 255, 255, 0.4),
+      0 0 25px rgba(255, 255, 255, 0.3);
+  }
+  
+  to {
+    text-shadow: 
+      0 0 10px rgba(255, 255, 255, 0.6), 
+      0 0 15px rgba(255, 255, 255, 0.5), 
+      0 0 20px rgba(255, 255, 255, 0.4), 
+      0 0 25px rgba(255, 255, 255, 0.3),
+      0 0 30px rgba(255, 255, 255, 0.2);
+  }
+}
+
+
+
+
+
+.container {
+  display: inline-block;
+  cursor: pointer;
+  padding: 2px;
+  position-try: relative;
+  float: left;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 30px;
+  height: 4px;
+  background-color: #ffffff;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
+}
+
+
+
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 3000px;
+  position: relative;
+  margin:0%;
+  filter: brightness(75%);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1s;
+}
+
+.top-left {
+  color: #ffffff;
+  font-size: 150px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 50;
+  
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+.container {
+  display: inline-block;
+  cursor: pointer;
+}
+
+
+</style>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="card.css">
+<link rel="stylesheet" href="sliding menu.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+
+    
+    
+
+    
+
+    
+
+     
+    <header>
+        <div class="background">
+            <h1>Venue booking system</h1>
+        </div>
+    </header>
+    
+
+    <nav>
+        <div class="container" onclick="openNav()">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        
+
+       
+       
+
+        <div>
+            
+            <ul>
+              <li>
+                <a href="#">Profile</a>
+                <ul>
+                  <li><a href="signin.html">Login</a></li>
+                  <li><a href="signin.html">Sign Up</a></li>
+                </ul>
+              </li>
+            </ul>
+        </div>
+        
+          
+    </nav>
+
+   
+
+
+
+
+
+
+
+
+    
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 4</div>
+  <div class="top-left"></div>
+  <img src="MG-Auditorium.jpg" style="width:100%">
+  <div class="text">MG-Auditorium</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 4</div>
+  <img src="5th-Floor-VOC-Auditorium-4.jpg" style="width:100%">
+  <div class="text">VOC Auditorium-4</div>
+</div>
+
+<div class="mySlides fade">
+    <div class="numbertext">3 / 4</div>
+    <img src="5th-Floor-VOC-Auditorium-2.jpg" style="width:100%">
+    <div class="text">VOC Auditorium-2</div>
+</div>
+
+<div class="mySlides fade">
+    <div class="numbertext">4 / 4</div>
+    <img src="netaji.jpg" style="width:100%">
+    <div class="text">VOC Auditorium-2</div>
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+
+
+    <div class="container" onclick="myFunction(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+
+
+
+
+
+    <div id="container">	
+	
+            <div class="product-details">
+                
+            <h1>MG-Auditorium</h1>
+ 
+            <span class="hint-star star">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+            </span>
+                
+            
+                <p class="information">" MG auditorium  features tiered seating for clear visibility, a large stage, advanced acoustics, lighting systems, AV equipment, climate control, wheelchair accessibility, and backstage facilities for performers or presenters. "</p>
+        
+                
+                
+        <div class="control">
+            
+       
+            
+        </div>
+                    
+        </div>
+            
+            
+            
+            
+            
+        <div class="product-image">
+            
+            <img src="MG-Auditorium.jpg">
+            
+        
+        </div>
+        
+        
+        </div>
+
+
+
+
+
+
+        <div id="container">	
+	
+                <div class="product-details">
+                    
+                <h1>VOC-Auditorium-2</h1>
+       
+                <span class="hint-star star">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                </span>
+                    
+                
+                    <p class="information">" VOC auditorium serves as overflow seating, hosts concurrent events or workshops, provides rehearsal space, and offers flexibility for smaller gatherings, ensuring smooth event operations alongside the MG auditorium. "</p>
+            
+                    
+                    
+            
+            <div class="control">
+                
+           
+                
+            </div>
+                        
+            </div>
+                
+                
+                
+                
+                
+            <div class="product-image">
+                
+                <img src="5th-Floor-VOC-Auditorium-2.jpg">
+                
+            
+            </div>
+            
+            
+            </div>
+
+
+
+            <div id="container">	
+	
+                    <div class="product-details">
+                        
+                    <h1>VOC-Auditorium-4</h1>
+        
+                    <span class="hint-star star">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </span>
+                        
+                    
+                
+                        <p class="information">" VOC 4 auditorium functions as overflow seating, accommodates concurrent sessions or workshops, offers rehearsal space, and provides versatility for smaller events, ensuring seamless operations alongside the primary auditorium. "</p>
+                
+                        
+                        
+           
+                <div class="control">
+                    
+               
+                    
+                </div>
+                            
+                </div>
+                    
+                
+                    
+                    
+                    
+                
+                    
+                <div class="product-image">
+                    
+                    <img src="5th-Floor-VOC-Auditorium-4.jpg">
+                    
+               
+                
+                </div>
+                
+                
+                
+                </div>
+
+                <div id="container">	
+	
+                   
+                        <div class="product-details">
+                          
+                        <h1>Netaji-Auditorium</h1>
+                   
+                        <span class="hint-star star">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                        </span>
+                            
+                        
+                    
+                            <p class="information">" Netaji auditorium acts as overflow seating, supports simultaneous sessions or workshops, serves as rehearsal space, and adds flexibility for smaller events, ensuring smooth operations alongside the main venue "</p>
+                    
+                            
+                            
+                 
+                    <div class="control">
+                        
+                   
+                        
+                    </div>
+                                
+                    </div>
+                        
+                   
+                        
+                    <div class="product-image">
+                        
+                        <img src="netaji.jpg">
+                        
+                  
+                    
+                    </div>
+                    
+                    
+                    
+                    </div>
+
+                </div>
+                <link rel="stylesheet" href="button.css">
+                <a href="booking.html">
+                    <svg class="icon-arrow before">
+                        <use xlink:href="#arrow"></use>
+                    </svg>
+                    <span class="label">Book Now</span>
+                    <svg class="icon-arrow after">
+                        <use xlink:href="booking.html"></use>
+                    </svg>
+                </a>
+                
+                <svg style="display: none;">
+                  <defs>
+                    <symbol id="arrow" viewBox="0 0 35 15">
+                      <title>Arrow</title>
+                      <path d="M27.172 5L25 2.828 27.828 0 34.9 7.071l-7.07 7.071L25 11.314 27.314 9H0V5h27.172z "/>
+                    </symbol>
+                  </defs>
+                </svg>
+
+
+<script>
+
+function myFunction(x) {
+  x.classList.toggle("change");
+}
+
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+
+
+<script src="sliding menu.js"></script>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="about us.html">About</a>
+        <a href="signin.html">Sign In</a>
+        <a href="#">Previous Bookings</a>
+        <a href="#">Available events </a>
+      </div>
+      
+      
+      
+      <div id="main">
+        ...
+      </div>
+
+<hr>
+
+
+
+
+</body>
+</html> 
